@@ -1,9 +1,8 @@
-<?php 
- class Controller {
-    protected function view($filename = '', $data=[])
+<?php
+class Controller
+{
+    protected function view($filename = '', $data = [])
     {
-        require_once '../views/' . $filename . '.php';
+        require_once(__DIR__ . '/../views/' . $filename . '.php');
     }
- }
-
-?>
+}?>

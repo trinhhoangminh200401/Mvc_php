@@ -1,6 +1,7 @@
-<?php 
-require_once '../helpers/Database.php';
+<?php
+require_once(__DIR__ . '/../helpers/Database.php');
  class Model {
+   
     private $pdo;
     protected $table;
     function __construct($pdo)
@@ -13,5 +14,6 @@ require_once '../helpers/Database.php';
          $model = $data->fetchAll(PDO::FETCH_OBJ);
          return $model;
     }
+ 
  }
 ?>

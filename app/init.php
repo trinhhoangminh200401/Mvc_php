@@ -1,6 +1,9 @@
 <?php
 
 
- require_once '../app/routes.php';
- Router::get('/test', 'PersonController', 'getAllData');
+
+require_once(__DIR__ . '/routes.php');
+ Router::get('/', 'PersonController', 'getAllData');
+    // Router::get('/home/{id}', 'PersonController', 'getid');
+
 ;

@@ -13,14 +13,13 @@ class Router
 
         if (preg_match($pattern, $currentUri)) {
            if(is_callable($controller)){
-            
               $controller();
            }
            else{
-            require_once '../controller/'.$controller.'.php';
+                require_once(__DIR__ . '/../controller/' . $controller . '.php');
             $controller = new $controller();
             $controller -> $action();
-            
+
            }
            exit();
         }
