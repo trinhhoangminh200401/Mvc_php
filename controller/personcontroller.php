@@ -22,7 +22,15 @@ class PersonController extends Controller
       $this->view('home', $array);
    }
 
-   // public function getId($id){
-   //    return 'id'.$id;
-   // }
+   public function getUserId($id){
+      
+      $result = $this->person->getDataId($id);
+      
+
+      $this->view('detail',[
+         'user'=>$result
+
+      ]);
+
+   }
 }

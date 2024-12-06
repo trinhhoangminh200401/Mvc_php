@@ -28,12 +28,12 @@ class Database
         }
     }
 
-    public function select($query)
+    public function select($query,$param=[])
     {
       
      
             $result = $this->link->prepare($query);
-            $result->execute();
+            $result->execute($param);
             if ($result->rowCount() > 0) {
                 return $result;
             } else {

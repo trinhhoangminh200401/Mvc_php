@@ -3,7 +3,8 @@
 
 
 require_once(__DIR__ . '/routes.php');
- Router::get('/', 'PersonController', 'getAllData');
-    // Router::get('/home/{id}', 'PersonController', 'getid');
+require_once(__DIR__.'/../controller/personcontroller.php');
 
-;
+Router::get('/', 'PersonController', 'getAllData');
+Router::get('/home', 'PersonController', 'getAllData');
+Router::get('/id/{id}','PersonController', 'getUserId');
