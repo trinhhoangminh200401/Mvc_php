@@ -25,13 +25,7 @@ class Router
         $pattern = self::convertPathToPattern($path);
         if (preg_match($pattern, $currentUri, $matches)) {
             array_shift($matches);
-
-          
-           
             $matchesFilter = array_filter($matches,'is_string',ARRAY_FILTER_USE_KEY);
-
-  
-
             if (is_callable($controller)) {
                 call_user_func_array($controller, $matches);
             } else {
