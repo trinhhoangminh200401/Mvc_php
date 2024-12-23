@@ -33,4 +33,26 @@ class PersonController extends Controller
       ]);
 
    }
+   public function deleteUserId($id)
+   {
+      header('Content-Type: application/json');
+
+      error_log("Attempting to delete user with ID: $id");
+
+      $result = $this->person->deleteUser($id);
+
+
+      if ($result) {
+         http_response_code(200);
+         echo json_encode(['message' => 'User deleted successfully']);
+      } else {
+         http_response_code(404);
+         echo json_encode(['message' => 'User not found or failed to delete']);
+      }
+
+      exit();
+   }
+
+
+
 }

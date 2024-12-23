@@ -19,6 +19,12 @@ require_once(__DIR__ . '/../helpers/Database.php');
       $params = [':id' => $id]; 
       return $this->pdo->select($query, $params);
    }
+   public function deleteUser($id){
+      $query="DELETE FROM {$this->table} where id = :id";
+      $params=[':id'=>$id];
+      return $this->pdo->delete($query,$params);
+
+   }
  
  }
 ?>
